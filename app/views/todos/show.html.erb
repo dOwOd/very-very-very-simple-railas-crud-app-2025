@@ -1,0 +1,7 @@
+<h1><%= @todo.title %></h1>
+
+<p><strong>説明:</strong> <%= @todo.description %></p>
+
+<%= link_to '戻る', todos_path %>
+<%= link_to '編集', edit_todo_path(@todo) %>
+<%= link_to '削除', todo_path(@todo), data: { 'turbo-method': :delete, turbo_confirm: '本当に削除しますか?' } %>

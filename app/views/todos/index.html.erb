@@ -1,0 +1,26 @@
+<h1>Todo List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>説明</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td><%= todo.title %></td>
+        <td><%= todo.description %></td>
+        <td>
+          <%= link_to '詳細', todo_path(todo) %>
+          <%= link_to '編集', edit_todo_path(todo) %>
+          <%= link_to '削除', todo, data: { 'turbo-method': :delete, turbo_confirm: '本当に削除しますか?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '新しいTodoを作成', new_todo_path %>

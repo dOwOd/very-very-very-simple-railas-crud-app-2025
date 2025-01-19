@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "rails/welcome#index"
   resources :todos
-  get '/health_check', to: 'health_check#show'
+  get 'check' => 'checks#show'
 end

@@ -1,12 +1,12 @@
 services:
   app:
-    image: ruby:3.3.6
+    build: .
     environment:
       MYSQL_ROOT_PASSWORD: password
       DATABASE_USERNAME: root
       DATABASE_HOST: db
     command: >
-      bash -c "bundle install && bundle exec rails s -p 3000 -b '0.0.0.0'"
+      bash -c "bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/app
     working_dir: /app
